@@ -49,4 +49,11 @@ public class Question {
         
     }
     
+    
+    // MARK: Methods
+    
+    func isCorrect(_ guess: String) -> Bool {
+        return guess == correct
+    }
+    
 }

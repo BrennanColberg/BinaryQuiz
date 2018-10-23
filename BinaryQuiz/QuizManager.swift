@@ -20,8 +20,8 @@ public class QuizManager {
     var currentQuiz: Quiz {
         get { return quizzes[index] }
     }
-    var currentQuestion: Question {
-        get { return currentQuiz.currentQuestion }
+    var currentQuestion: Question? {
+        get { return currentQuiz.currentQuestion ?? nil }
     }
     
     

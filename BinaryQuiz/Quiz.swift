@@ -19,11 +19,18 @@ public class Quiz {
     var index: Int = 0
     
     // getters & setters
-    var currentQuestion: Question {
+    var currentQuestion: Question? {
         get {
+            
+            // index must be valid
+            guard index < questions.count else {
+                return nil
+            }
+            
             let question = questions[index]
             let correct = options[answers[question]!]
             return Question(options: self.options, text: question, correct: correct)!
+            
         }
     }
     

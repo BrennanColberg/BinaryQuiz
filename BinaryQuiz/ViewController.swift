@@ -30,17 +30,23 @@ class ViewController: UIViewController {
         
         // load quiz
         manager = QuizManager()
-        loadQuestion(manager!.currentQuestion)
+        loadQuestion(manager!.currentQuestion!)
     }
 
     
     // MARK: Interaction Functions
     
     @IBAction func clickTopButton(_ sender: Any) {
+        if let question = manager?.currentQuestion {
+            print((question.isCorrect(topButton.currentTitle!)) ? "correct" : "incorrect")
+        }
         nextQuestion()
     }
     
     @IBAction func clickBottomButton(_ sender: Any) {
+        if let question = manager?.currentQuestion {
+            print((question.isCorrect(bottomButton.currentTitle!)) ? "correct" : "incorrect")
+        }
         nextQuestion()
     }
     
@@ -55,7 +61,9 @@ class ViewController: UIViewController {
     
     func nextQuestion() {
         if (manager?.currentQuiz.nextQuestion())! {
-            loadQuestion(manager!.currentQuestion)
+            if let question = manager!.currentQuestion {
+                loadQuestion(question)
+            }
         } else {
             endGame()
         }
