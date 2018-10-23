@@ -12,10 +12,20 @@ public class Quiz {
     
     // MARK: Properties
     
+    // variables
     var options: [String]
     var questions: [String]
     var answers: [String:Int]
     var index: Int = 0
+    
+    // getters & setters
+    var currentQuestion: Question {
+        get {
+            let question = questions[index]
+            let correct = options[answers[question]!]
+            return Question(options: self.options, text: question, correct: correct)!
+        }
+    }
     
     
     // MARK: Initialization
@@ -47,13 +57,6 @@ public class Quiz {
     public func nextQuestion() -> Bool {
         index += 1
         return index < questions.count
-    }
-    
-    // returns current question in Question form
-    public func currentQuestion() -> Question {
-        let question = questions[index]
-        let correct = options[answers[question]!]
-        return Question(options: self.options, text: question, correct: correct)!
     }
     
 }

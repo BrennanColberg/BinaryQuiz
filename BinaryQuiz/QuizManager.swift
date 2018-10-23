@@ -12,10 +12,16 @@ public class QuizManager {
     
     // MARK: Properties
     
+    // variables
     var quizzes: [Quiz] = []
-    var currentIndex: Int = 0
+    var index: Int = 0
+    
+    // getters & setters
     var currentQuiz: Quiz {
-        get { return quizzes[currentIndex] }
+        get { return quizzes[index] }
+    }
+    var currentQuestion: Question {
+        get { return currentQuiz.currentQuestion }
     }
     
     

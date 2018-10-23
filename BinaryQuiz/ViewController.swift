@@ -27,31 +27,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // load quiz
         manager = QuizManager()
+        loadQuestion(manager!.currentQuestion)
     }
 
     
     // MARK: Interaction Functions
     
     @IBAction func clickTopButton(_ sender: Any) {
-        itemLabel.text = "top"
+        nextQuestion()
     }
     
     @IBAction func clickBottomButton(_ sender: Any) {
-        itemLabel.text = "bottom"
+        nextQuestion()
     }
     
     
     // MARK: Custom Functions
     
-    func loadQuiz(_ quiz: Quiz) {
-        self.currentQuiz = quiz
-    }
-    
     func loadQuestion(_ question: Question) {
         itemLabel.text = question.text
         topButton.setTitle(question.options[0], for: .normal)
         bottomButton.setTitle(question.options[1], for: .normal)
+    }
+    
+    func nextQuestion() {
+        if (manager?.currentQuiz.nextQuestion())! {
+            loadQuestion(manager!.currentQuestion)
+        } else {
+            endGame()
+        }
+    }
+    
+    func endGame() {
+        print("game over!")
     }
     
 }

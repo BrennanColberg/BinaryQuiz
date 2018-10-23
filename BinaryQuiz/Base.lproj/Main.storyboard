@@ -24,13 +24,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kG0-ro-wtP" userLabel="Options Stack View">
-                                <rect key="frame" x="35" y="274" width="250" height="120"/>
+                                <rect key="frame" x="35" y="244" width="250" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0K-8v-1ok">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="w0K-8v-1ok">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="80"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2GC-Ge-MS9"/>
+                                            <constraint firstAttribute="height" constant="80" id="vBh-g0-L5K"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                         <state key="normal" title="Top!">
@@ -40,11 +40,11 @@
                                             <action selector="clickTopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a30-PA-g13"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuV-62-h9L">
-                                        <rect key="frame" x="0.0" y="70" width="250" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nuV-62-h9L">
+                                        <rect key="frame" x="0.0" y="100" width="250" height="80"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="980-kA-xqZ"/>
+                                            <constraint firstAttribute="height" constant="80" id="7Oa-PW-gcH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                         <state key="normal" title="Bottom!">
@@ -56,7 +56,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="nuV-62-h9L" firstAttribute="height" secondItem="w0K-8v-1ok" secondAttribute="height" id="00N-7z-BWI"/>
+                                    <constraint firstItem="nuV-62-h9L" firstAttribute="height" secondItem="w0K-8v-1ok" secondAttribute="height" id="wbn-6X-dpZ"/>
                                     <constraint firstAttribute="width" constant="250" id="xVy-cy-50e"/>
                                 </constraints>
                             </stackView>
