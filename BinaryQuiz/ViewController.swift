@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var quizzes = [Quiz]()
     var currentQuiz: Quiz!
     var manager: QuizManager?
-    
+    var clickable: Bool = true;
     
     // MARK: System Functions
     
@@ -37,17 +37,15 @@ class ViewController: UIViewController {
     // MARK: Interaction Functions
     
     @IBAction func clickTopButton(_ sender: Any) {
-        if let question = manager?.currentQuestion {
-            print((question.isCorrect(topButton.currentTitle!)) ? "correct" : "incorrect")
+        if (clickable) {
+            evaluateGuess(guess: topButton.currentTitle!)
         }
-        nextQuestion()
     }
     
     @IBAction func clickBottomButton(_ sender: Any) {
-        if let question = manager?.currentQuestion {
-            print((question.isCorrect(bottomButton.currentTitle!)) ? "correct" : "incorrect")
+        if (clickable) {
+            evaluateGuess(guess: bottomButton.currentTitle!)
         }
-        nextQuestion()
     }
     
     
@@ -57,6 +55,26 @@ class ViewController: UIViewController {
         itemLabel.text = question.text
         topButton.setTitle(question.options[0], for: .normal)
         bottomButton.setTitle(question.options[1], for: .normal)
+    }
+    
+    func evaluateGuess(guess: String) {
+        clickable = false;
+        if let question = manager?.currentQuestion {
+            if (question.isCorrect(guess)) {
+                itemLabel.textColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1.0)
+                print("correct")
+            } else {
+                itemLabel.textColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1.0)
+                print("incorrect")
+            }
+            
+        }
+        // then change
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
+            self.itemLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+            self.nextQuestion()
+            self.clickable = true;
+        }
     }
     
     func nextQuestion() {
