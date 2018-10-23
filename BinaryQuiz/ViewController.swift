@@ -19,18 +19,15 @@ class ViewController: UIViewController {
     
     // specific game properties
     var quizzes = [Quiz]()
+    var currentQuiz: Quiz!
+    var manager: QuizManager?
     
     
     // MARK: System Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // tries to load question
-        if let q = Question(text: "test", options: ["option1", "option2"]) {
-            loadQuestion(q)
-        }
-        
+        manager = QuizManager()
     }
 
     
@@ -46,6 +43,10 @@ class ViewController: UIViewController {
     
     
     // MARK: Custom Functions
+    
+    func loadQuiz(_ quiz: Quiz) {
+        self.currentQuiz = quiz
+    }
     
     func loadQuestion(_ question: Question) {
         itemLabel.text = question.text

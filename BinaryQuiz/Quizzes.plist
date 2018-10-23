@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Options</key>
+		<array>
+			<string>Pokémon</string>
+			<string>Programming Language</string>
+		</array>
+		<key>Questions</key>
+		<dict>
+			<key>Abra</key>
+			<integer>0</integer>
+			<key>Onyx</key>
+			<integer>1</integer>
+			<key>Onix</key>
+			<integer>0</integer>
+			<key>Kadabra</key>
+			<integer>0</integer>
+			<key>Purrr</key>
+			<integer>1</integer>
+			<key>Vulpix</key>
+			<integer>0</integer>
+			<key>Hadoop</key>
+			<integer>0</integer>
+			<key>Sawk</key>
+			<integer>0</integer>
+			<key>Keras</key>
+			<integer>1</integer>
+			<key>Scikit</key>
+			<integer>1</integer>
+			<key>Feebas</key>
+			<integer>0</integer>
+			<key>Pandas</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<dict>
+		<key>Options</key>
+		<array>
+			<string>Antidepressant</string>
+			<string>Tolkien Character</string>
+		</array>
+		<key>Questions</key>
+		<dict>
+			<key>Azafen</key>
+			<integer>0</integer>
+			<key>Bergil</key>
+			<integer>1</integer>
+			<key>Celebrian</key>
+			<integer>1</integer>
+			<key>Cirdan</key>
+			<integer>1</integer>
+			<key>Cledial</key>
+			<integer>0</integer>
+			<key>Desyrel</key>
+			<integer>0</integer>
+			<key>Edronax</key>
+			<integer>0</integer>
+			<key>Elendil</key>
+			<integer>1</integer>
+			<key>Elronon</key>
+			<integer>0</integer>
+			<key>Erestor</key>
+			<integer>1</integer>
+			<key>Eskalith</key>
+			<integer>0</integer>
+			<key>Finarfin</key>
+			<integer>1</integer>
+			<key>Haldir</key>
+			<integer>1</integer>
+			<key>Minalcar</key>
+			<integer>1</integer>
+			<key>Nardil</key>
+			<integer>0</integer>
+			<key>Narmacil</key>
+			<integer>1</integer>
+			<key>Narvi</key>
+			<integer>1</integer>
+			<key>Norval</key>
+			<integer>0</integer>
+			<key>Orophin</key>
+			<integer>1</integer>
+			<key>Prothiaden</key>
+			<integer>0</integer>
+			<key>Sintamil</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+    <dict>
+        <key>Options</key>
+        <array>
+            <string>German Scientist</string>
+            <string>Nazi War Criminal</string>
+        </array>
+        <key>Questions</key>
+        <dict>
+            <key>Heinrich Otto Abetz</key>
+            <integer>1</integer>
+            <key>Ralf Altmeyer</key>
+            <integer>0</integer>
+            <key>Muto Akira</key>
+            <integer>1</integer>
+            <key>Josef Brdjanin</key>
+            <integer>1</integer>
+            <key>Rudolf Criegee</key>
+            <integer>0</integer>
+            <key>Nikolai Eberhardt</key>
+            <integer>0</integer>
+            <key>Horst Fiestel</key>
+            <integer>0</integer>
+            <key>Miroslav Filipovic</key>
+            <integer>1</integer>
+            <key>Otto Hahn</key>
+            <integer>0</integer>
+            <key>Rudolf Hess</key>
+            <integer>1</integer>
+            <key>Rudolf Hoess</key>
+            <integer>1</integer>
+            <key>Gustaz Hellman</key>
+            <integer>0</integer>
+            <key>Uwe Kils</key>
+            <integer>0</integer>
+            <key>Adolph Kussmaul</key>
+            <integer>1</integer>
+            <key>Rudolf Virchow</key>
+            <integer>0</integer>
+        </dict>
+    </dict>
+</array>
+</plist>

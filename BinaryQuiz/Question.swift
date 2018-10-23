@@ -15,16 +15,12 @@ public class Question {
     
     public private(set) var text: String
     public private(set) var options: [String]
+    private var correct: String
     
     
     // MARK: Initialization
     
-    init?(text: String, options: [String]) {
-        
-        // text must be substantial
-        guard !text.isEmpty else {
-            return nil
-        }
+    init?(options: [String], text: String, correct: String) {
         
         // there must be two options
         guard options.count == 2 else {
@@ -36,9 +32,20 @@ public class Question {
             return nil
         }
         
+        // text must be substantial
+        guard !text.isEmpty else {
+            return nil
+        }
+        
+        // ensures valid answer
+        guard !correct.isEmpty, options.contains(correct) else {
+            return nil
+        }
+        
         // set values
         self.text = text
         self.options = options
+        self.correct = correct
         
     }
     
