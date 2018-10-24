@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
     // MARK: Properties
     
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     var manager: QuizManager?
     var clickable: Bool = true;
     
+    
     // MARK: System Functions
     
     override func viewDidLoad() {
@@ -32,20 +33,24 @@ class ViewController: UIViewController {
         manager = QuizManager()
         loadQuestion(manager!.currentQuestion!)
     }
-
+    
     
     // MARK: Interaction Functions
     
-    @IBAction func clickTopButton(_ sender: Any) {
+    @IBAction func tapTopButton(_ sender: Any) {
         if (clickable) {
             evaluateGuess(guess: topButton.currentTitle!)
         }
     }
     
-    @IBAction func clickBottomButton(_ sender: Any) {
+    @IBAction func tapBottomButton(_ sender: Any) {
         if (clickable) {
             evaluateGuess(guess: bottomButton.currentTitle!)
         }
+    }
+    
+    @IBAction func tapExitButton(_ sender: Any) {
+        endGame()
     }
     
     
@@ -55,26 +60,6 @@ class ViewController: UIViewController {
         itemLabel.text = question.text
         topButton.setTitle(question.options[0], for: .normal)
         bottomButton.setTitle(question.options[1], for: .normal)
-    }
-    
-    func evaluateGuess(guess: String) {
-        clickable = false;
-        if let question = manager?.currentQuestion {
-            if (question.isCorrect(guess)) {
-                itemLabel.textColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1.0)
-                print("correct")
-            } else {
-                itemLabel.textColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1.0)
-                print("incorrect")
-            }
-            
-        }
-        // then change
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
-            self.itemLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
-            self.nextQuestion()
-            self.clickable = true;
-        }
     }
     
     func nextQuestion() {
@@ -87,9 +72,38 @@ class ViewController: UIViewController {
         }
     }
     
+    func evaluateGuess(guess: String) {
+        
+        // disable additional guesses for this question
+        clickable = false;
+        
+        // evaluate the guess
+        if let question = manager?.currentQuestion {
+            if (question.isCorrect(guess)) {
+                // turn label green if correct
+                itemLabel.textColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1.0)
+                print("correct")
+            } else {
+                // turn label red if incorrect
+                itemLabel.textColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1.0)
+                print("incorrect")
+            }
+            
+        }
+        
+        // change colors back to default & go to next question after 0.5 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.itemLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
+            self.nextQuestion()
+            self.clickable = true;
+        }
+        
+    }
+    
     func endGame() {
         print("game over!")
+        // move to results screen!
+        self.performSegue(withIdentifier: "EndGameSegue", sender: nil)
     }
     
 }
-

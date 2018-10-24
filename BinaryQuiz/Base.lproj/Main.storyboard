@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pvq-WJ-pWU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
+        <scene sceneID="emz-VA-eTW">
+            <objects>
+                <viewController id="2UP-Rp-Fy3" customClass="MenuViewController" customModule="BinaryQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vq6-eR-2ja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-l0-BG5">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" identifier="StartGameSegue" popoverAnchorView="dWS-l0-BG5" id="NqL-i9-ZOi">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dWS-l0-BG5" firstAttribute="centerX" secondItem="Vq6-eR-2ja" secondAttribute="centerX" id="gib-Zt-4j4"/>
+                            <constraint firstItem="dWS-l0-BG5" firstAttribute="centerY" secondItem="Vq6-eR-2ja" secondAttribute="centerY" id="hki-bb-Pdw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vGd-a7-9f9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="N0j-GA-KbI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NwS-1g-8eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="27"/>
+        </scene>
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BinaryQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="BinaryQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +65,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickTopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a30-PA-g13"/>
+                                            <action selector="tapTopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a30-PA-g13"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="nuV-62-h9L">
@@ -45,7 +76,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickBottomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Udm-ez-8s4"/>
+                                            <action selector="tapBottomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Udm-ez-8s4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -53,9 +84,17 @@
                                     <constraint firstItem="nuV-62-h9L" firstAttribute="height" secondItem="w0K-8v-1ok" secondAttribute="height" id="wbn-6X-dpZ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnP-ar-0ur">
+                                <rect key="frame" x="20" y="617" width="30" height="30"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="tapExitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dhb-MF-MWE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XnP-ar-0ur" secondAttribute="bottom" constant="20" id="327-eF-g5v"/>
                             <constraint firstItem="kG0-ro-wtP" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.8" id="JB7-MC-sXD"/>
                             <constraint firstItem="kG0-ro-wtP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qme-xz-2xH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OIn-aT-IFz" secondAttribute="trailing" constant="20" id="aKH-qD-GUn"/>
@@ -63,6 +102,7 @@
                             <constraint firstItem="kG0-ro-wtP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="fxY-jz-iEw"/>
                             <constraint firstItem="OIn-aT-IFz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iYS-ft-ibf"/>
                             <constraint firstItem="kG0-ro-wtP" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="uke-Ro-bv0"/>
+                            <constraint firstItem="XnP-ar-0ur" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xc8-ZD-BHc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -70,10 +110,58 @@
                         <outlet property="bottomButton" destination="nuV-62-h9L" id="1ln-K1-8AH"/>
                         <outlet property="itemLabel" destination="OIn-aT-IFz" id="AvA-8W-Bcu"/>
                         <outlet property="topButton" destination="w0K-8v-1ok" id="HR6-pH-G0d"/>
+                        <segue destination="6c7-p0-v58" kind="presentation" identifier="EndGameSegue" id="QVA-z7-Rjx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="863" y="27"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="oTX-Ma-68D">
+            <objects>
+                <viewController id="6c7-p0-v58" customClass="ResultsViewController" customModule="BinaryQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Kb-tq-Kf0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-TT-8GH">
+                                <rect key="frame" x="141" y="307" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to Menu"/>
+                                <connections>
+                                    <segue destination="2UP-Rp-Fy3" kind="presentation" animates="NO" id="BD3-EO-qqb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1ju-94-hJH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Vp-YF-BPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fkx-6f-UjH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pvq-WJ-pWU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fiw-Yl-LOc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2UP-Rp-Fy3" kind="relationship" relationship="rootViewController" id="D8i-pK-Uss"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrs-2W-nsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-764" y="27"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BD3-EO-qqb"/>
+    </inferredMetricsTieBreakers>
 </document>
