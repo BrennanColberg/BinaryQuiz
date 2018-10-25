@@ -18,9 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bottomButton: UIButton!
     
     // specific game properties
-    var quizzes = [Quiz]()
-    var currentQuiz: Quiz!
-    var manager: QuizManager?
+    var quiz: Quiz!
     var clickable: Bool = true;
     
     
@@ -28,10 +26,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // load quiz
-        manager = QuizManager()
-        loadQuestion(manager!.currentQuestion!)
+        loadQuestion(quiz.currentQuestion!)
     }
     
     
@@ -63,8 +58,8 @@ class GameViewController: UIViewController {
     }
     
     func nextQuestion() {
-        if (manager?.currentQuiz.nextQuestion())! {
-            if let question = manager!.currentQuestion {
+        if (quiz.nextQuestion()) {
+            if let question = quiz.currentQuestion {
                 loadQuestion(question)
             }
         } else {
@@ -78,7 +73,7 @@ class GameViewController: UIViewController {
         clickable = false;
         
         // evaluate the guess
-        if let question = manager?.currentQuestion {
+        if let question = quiz.currentQuestion {
             if (question.isCorrect(guess)) {
                 // turn label green if correct
                 itemLabel.textColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1.0)
