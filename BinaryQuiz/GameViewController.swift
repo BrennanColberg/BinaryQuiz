@@ -18,8 +18,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var bottomButton: UIButton!
     
     // specific game properties
+    let ANSWER_CONFIRMATION_DELAY : Double = 0.1
     var quiz: Quiz!
     var clickable: Bool = true;
+    var correct : Int = 0
     
     
     // MARK: System Functions
@@ -76,6 +78,7 @@ class GameViewController: UIViewController {
         // evaluate the guess
         if let question = quiz.currentQuestion {
             if (question.isCorrect(guess)) {
+                correct += 1
                 // turn label green if correct
                 itemLabel.textColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1.0)
                 print("correct")
@@ -87,8 +90,8 @@ class GameViewController: UIViewController {
             
         }
         
-        // change colors back to default & go to next question after 0.5 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        // change colors back to default & go to next question after given seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + ANSWER_CONFIRMATION_DELAY) {
             self.itemLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0)
             self.nextQuestion()
             self.clickable = true;
@@ -100,6 +103,13 @@ class GameViewController: UIViewController {
         print("game over!")
         // move to results screen!
         self.performSegue(withIdentifier: "EndGameSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let results = segue.destination as! ResultsViewController
+        results.quizTitle = quiz.title
+        results.score = correct
+        results.possible = quiz.questions.count
     }
     
 }

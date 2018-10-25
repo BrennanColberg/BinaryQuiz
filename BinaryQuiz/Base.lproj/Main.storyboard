@@ -141,21 +141,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-TT-8GH">
-                                <rect key="frame" x="113" y="269" width="94" height="30"/>
-                                <state key="normal" title="Back to Menu"/>
-                                <connections>
-                                    <segue destination="nDx-38-Nkz" kind="show" animates="NO" id="nno-d0-No7"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xLB-a0-9UF" userLabel="Score Stack View">
+                                <rect key="frame" x="116" y="117.5" width="88.5" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Roo-p3-Nfc">
+                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="##/##" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwh-1S-dXi">
+                                        <rect key="frame" x="20.5" y="28.5" width="47" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U8Z-xA-PqW" userLabel="Controls Stack View">
+                                <rect key="frame" x="113" y="320" width="94" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdE-TT-8GH">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
+                                        <state key="normal" title="Back to Menu"/>
+                                        <connections>
+                                            <segue destination="nDx-38-Nkz" kind="show" animates="NO" id="nno-d0-No7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVw-Z0-rKT">
+                                        <rect key="frame" x="0.0" y="40" width="94" height="30"/>
+                                        <state key="normal" title="Play Again"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category 1 or Category 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AS1-cn-loR">
+                                <rect key="frame" x="58" y="50" width="204" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZdE-TT-8GH" firstAttribute="centerX" secondItem="0Kb-tq-Kf0" secondAttribute="centerX" id="DUI-g9-g1B"/>
-                            <constraint firstItem="ZdE-TT-8GH" firstAttribute="centerY" secondItem="0Kb-tq-Kf0" secondAttribute="centerY" id="IFk-Ja-x87"/>
+                            <constraint firstItem="U8Z-xA-PqW" firstAttribute="centerX" secondItem="0Kb-tq-Kf0" secondAttribute="centerX" id="0Tv-zZ-XTd"/>
+                            <constraint firstItem="AS1-cn-loR" firstAttribute="top" secondItem="1ju-94-hJH" secondAttribute="top" constant="30" id="4Zw-P3-BbE"/>
+                            <constraint firstItem="AS1-cn-loR" firstAttribute="centerX" secondItem="0Kb-tq-Kf0" secondAttribute="centerX" id="U12-cQ-4Ti"/>
+                            <constraint firstItem="xLB-a0-9UF" firstAttribute="centerY" secondItem="0Kb-tq-Kf0" secondAttribute="centerY" multiplier="0.5" id="UD7-BY-LnX"/>
+                            <constraint firstItem="xLB-a0-9UF" firstAttribute="centerX" secondItem="0Kb-tq-Kf0" secondAttribute="centerX" id="gFJ-ic-sBc"/>
+                            <constraint firstItem="U8Z-xA-PqW" firstAttribute="centerY" secondItem="0Kb-tq-Kf0" secondAttribute="centerY" multiplier="1.25" id="j5U-lz-kis"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1ju-94-hJH"/>
                     </view>
+                    <connections>
+                        <outlet property="menuButton" destination="ZdE-TT-8GH" id="gD7-IJ-LuJ"/>
+                        <outlet property="playAgainButton" destination="JVw-Z0-rKT" id="iiV-XP-GyY"/>
+                        <outlet property="scoreLabel" destination="Nwh-1S-dXi" id="FYK-4L-meq"/>
+                        <outlet property="titleLabel" destination="AS1-cn-loR" id="2Rq-tX-51e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vp-YF-BPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +223,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OVh-LC-GQ6"/>
         <segue reference="nno-d0-No7"/>
     </inferredMetricsTieBreakers>
 </document>
