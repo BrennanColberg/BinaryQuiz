@@ -17,6 +17,9 @@ public class Quiz {
     var questions: [String]
     var answers: [String:Int]
     var index: Int = 0
+    var title : String {
+        get { return "\(options[0]) or \(options[1])" }
+    }
     
     // getters & setters
     var currentQuestion: Question? {

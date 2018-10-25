@@ -24,9 +24,10 @@ class GameViewController: UIViewController {
     
     // MARK: System Functions
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadQuestion(quiz.currentQuestion!)
+    override func viewWillAppear(_ animated: Bool) {
+        if let question = quiz?.currentQuestion {
+             loadQuestion(question)
+        }
     }
     
     
@@ -98,7 +99,7 @@ class GameViewController: UIViewController {
     func endGame() {
         print("game over!")
         // move to results screen!
-        self.performSegue(withIdentifier: "EndGameSegue", sender: nil)
+        self.performSegue(withIdentifier: "EndGameSegue", sender: self)
     }
     
 }

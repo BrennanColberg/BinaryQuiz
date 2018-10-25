@@ -13,20 +13,20 @@
         <scene sceneID="5X7-C1-vib">
             <objects>
                 <tableViewController id="nDx-38-Nkz" customClass="MenuTableViewController" customModule="BinaryQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JGn-dV-UTZ" customClass="MenuTableView" customModule="BinaryQuiz" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JGn-dV-UTZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" id="KCl-xc-u1N" customClass="MenuTableViewCell" customModule="BinaryQuiz" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="50" id="KCl-xc-u1N" customClass="MenuTableViewCell" customModule="BinaryQuiz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KCl-xc-u1N" id="xcf-8R-a7l">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RE-oO-O2c">
-                                            <rect key="frame" x="139" y="11.5" width="42" height="21"/>
+                                            <rect key="frame" x="139" y="14.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="I1v-ux-VCD"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="PlayGameSegue" id="8fQ-xp-8Ay"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="PlayGameSegue" id="OVh-LC-GQ6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39Z-34-udI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,7 +181,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QVA-z7-Rjx"/>
+        <segue reference="OVh-LC-GQ6"/>
         <segue reference="nno-d0-No7"/>
     </inferredMetricsTieBreakers>
 </document>

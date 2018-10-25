@@ -18,8 +18,7 @@ class MenuTableViewController: UITableViewController {
     
     // MARK: Initialization
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         loadGamesIntoMenu()
     }
     
@@ -65,13 +64,25 @@ class MenuTableViewController: UITableViewController {
         
         // gets quiz data, puts it into cell
         let quiz = quizzes[indexPath.row]
-        cell.titleLabel.text = quiz.options[0] + " or " + quiz.options[1]
+        cell.titleLabel.text = quiz.title
         return cell
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("should run \(quizzes[indexPath.row].title)")
+        self.performSegue(withIdentifier: "PlayGameSegue", sender: self)
     }
     
     
     // MARK: Playing a Game
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let quiz = quizzes[indexPath.row]
+            let game = segue.destination as! GameViewController
+            game.quiz = quiz
+        }
+    }
     
 }

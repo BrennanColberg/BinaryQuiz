@@ -13,6 +13,4 @@ class MenuTableViewCell : UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    
-    
 }
