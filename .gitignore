@@ -49,3 +49,4 @@ nbproject
 .project
 .settings
 composer.lock
+*.xcuserstate
